@@ -1,0 +1,9 @@
+#!/bin/sh
+# Prerequisites: Create a git personal access token and store it in ~/.git_token
+# Example Usage: gitclone https://github.com/vimsquad/devops_bins.git
+
+REPO=$1
+TOKEN=$(cat ~/.git_token)
+REPO_WITH_CREDS=$(echo "$REPO"|sed -e "s/https:\/\//https:\/\/$TOKEN@/")
+git clone "$REPO_WITH_CREDS"
+
