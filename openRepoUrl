@@ -1,0 +1,2 @@
+#!/bin/sh
+open -a "Google Chrome" $(git config --get-all remote.origin.url)
