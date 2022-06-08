@@ -1,2 +1,4 @@
 #!/bin/sh
+git config --global pull.rebase true
+git fetch --all
 git pull origin "$(git branch --show-current)"
